@@ -1,9 +1,9 @@
-# WebRTC Video/Audio Broadcast
+# WebRTC Webcam Serice
 
-WebRTC PeerToPeer broadcast application that allows the broadcaster to send a video and audio stream to all connected users (watchers).
+WebRTC PeerToPeer broadcast application that allows for multiple webcams to viewed through a single webpage client with authentication.
 
-You can find the tutorial that explains the code and functionality on my [website](https://gabrieltanner.org/blog/webrtc-video-broadcast).
-
+Originally forked from [Tanner Gabriel's WebRTC-Video-Broadcast
+](https://github.com/TannerGabriel/WebRTC-Video-Broadcast) as a starting point
 ## Getting started
 
 ### Starting the application
@@ -18,15 +18,6 @@ npm install
 node server
 ```
 
-Start the application using Docker:
-
-```bash
-# Building the image
-docker build --tag webrtcvideobroadcast .
-
-# Run the image in a container
-docker run -d -p 4000:4000 webrtcvideobroadcast
-```
 
 ### Testing the application
 
@@ -34,22 +25,12 @@ The application should now be running on your localhost:4000 and you test it by 
 
 After that, you just need to visit localhost:4000 to connect to the server as a client and you should get the video that is streamed from the broadcaster.
 
-## Adding a TURN server
+## Authors
 
-A TURN server is used to relay traffic if a direct peer-to-peer connection fails and is required for most WebRTC applications since a direct connection is often not possible between two clients that aren't on the same network. This repository doesn't include the usage of a TURN server by default, but you can add one by commenting in the turn configuration in the `broadcast.js` and `watch.js` file and filling in your TURN credentials.
+Gabriel Tanner orignal Repo <br/>
+Jon Mallozzi - Added Auth, Multiple Broadcasters, Styling, Mobile Watcher App, and more. Basically turned it into a real aplication for a home security system.
 
-There are several options on how you can create your own TURN server. Here are just two common ones:
-
-- [Coturn](https://github.com/coturn/coturn)
-- [Golang WebRTC pion library TURN examples](https://github.com/pion/turn/tree/master/examples)
-
-You can also use TURN servers from cloud providers or other companies. Here is a [tutorial](https://gabrieltanner.org/blog/turn-server) that shows you how to set up Coturn and add a domain to your TURN server.
-
-## Author
-
-Gabriel Tanner
-
-## Support me
+## Support Gabriel for providing the original source
 
 <a href="https://www.buymeacoffee.com/gabrieltanner" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
